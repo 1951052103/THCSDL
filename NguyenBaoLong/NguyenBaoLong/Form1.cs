@@ -96,12 +96,12 @@ namespace NguyenBaoLong
         }
 
 
-        private bool AddProduct(string productName, int supplierID, int categoryID, int quantityPerUnit, double unitPrice)
+        private bool AddProduct(Product p)
         {
             bool r = false;
 
-            string query = String.Format("insert into Products (ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice) values ({0}, {1}, {2}, {3}, {4})",
-                productName, supplierID, categoryID, quantityPerUnit,unitPrice);
+            string query = String.Format("insert into Products (ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice) values (N'{0}', {1}, {2}, {3}, {4})",
+                p.ProductName, p.SupplierID, p.CategoryID, p.QuantityPerUnit, p.UnitPrice);
 
             SqlCommand cmd = new SqlCommand(query, conn);
  
@@ -111,8 +111,9 @@ namespace NguyenBaoLong
                 cmd.ExecuteNonQuery();
                 r = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 r = false;
             }
             finally
@@ -127,16 +128,19 @@ namespace NguyenBaoLong
         {
             try
             {
-                string productName = txtTenSP.Text.ToString();
-                int supplierID = int.Parse(cbNCC.SelectedValue.ToString());
-                int categoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
-                int quantityPerUnit = int.Parse(txtSoLuong.Text.ToString());
-                double unitPrice = double.Parse(txtDonGia.Text.ToString());
-                bool r = AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice);
+                Product p = new Product();
+                p.ProductName = txtTenSP.Text;
+                p.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
+                p.CategoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
+                p.QuantityPerUnit = int.Parse(txtSoLuong.Text.ToString());
+                p.UnitPrice = double.Parse(txtDonGia.Text.ToString());
+
+                bool r = AddProduct(p);
 
                 if (r)
                 {
                     MessageBox.Show("Them thanh cong");
+                    gvSanPham.DataSource = ListProducts();
                 }
                 else
                 {
