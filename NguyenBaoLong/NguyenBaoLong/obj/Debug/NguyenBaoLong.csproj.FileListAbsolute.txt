@@ -1,0 +1,9 @@
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\bin\Debug\NguyenBaoLong.exe.config
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\bin\Debug\NguyenBaoLong.exe
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\bin\Debug\NguyenBaoLong.pdb
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\obj\Debug\NguyenBaoLong.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\obj\Debug\NguyenBaoLong.Form1.resources
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\obj\Debug\NguyenBaoLong.Properties.Resources.resources
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\obj\Debug\NguyenBaoLong.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\obj\Debug\NguyenBaoLong.exe
+C:\Users\admin\Desktop\THCSDL\NguyenBaoLong\NguyenBaoLong\obj\Debug\NguyenBaoLong.pdb
