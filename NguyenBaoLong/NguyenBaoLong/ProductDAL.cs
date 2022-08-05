@@ -150,7 +150,7 @@ namespace NguyenBaoLong
                                                             "QuantityPerUnit = '{3}', "+
                                                             "UnitPrice = '{4}'" +
                                                             "where ProductID ={5}",
-                                                            p.ProductName, p.SupplierID, p.CategoryID, p.QuantityPerUnit, p.UnitPrice);
+                                                            p.ProductName, p.SupplierID, p.CategoryID, p.QuantityPerUnit, p.UnitPrice, p.ProductID);
 
             SqlCommand cmd = new SqlCommand(query, conn);
 

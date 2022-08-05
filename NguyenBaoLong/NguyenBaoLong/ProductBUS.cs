@@ -53,9 +53,9 @@ namespace NguyenBaoLong
         public int UpdateProduct(Product p)
         {
             int r = -1;
-            if (!d.CheckProductByID(p.ProductID))
+            if (d.CheckProductByID(p.ProductID))
             {
-                r = d.AddProduct(p);
+                r = d.UpdateProduct(p);
             }
             return r;
         }

@@ -15,7 +15,7 @@ namespace NguyenBaoLong
     public partial class Form1 : Form
     {
         ProductBUS b;
-        int productId;
+        int productID;
 
         public Form1()
         {
@@ -69,12 +69,13 @@ namespace NguyenBaoLong
         {
             if(e.RowIndex > 0 && e.RowIndex < gvSanPham.Rows.Count)
             {
-                productId = int.Parse(gvSanPham.Rows[e.RowIndex].Cells["ProductID"].Value.ToString());
+                productID = int.Parse(gvSanPham.Rows[e.RowIndex].Cells["ProductID"].Value.ToString());
                 txtTenSP.Text = gvSanPham.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
                 txtSoLuong.Text = gvSanPham.Rows[e.RowIndex].Cells["QuantityPerUnit"].Value.ToString();
                 txtDonGia.Text = gvSanPham.Rows[e.RowIndex].Cells["UnitPrice"].Value.ToString();
                 cbLoaiSP.SelectedValue = gvSanPham.Rows[e.RowIndex].Cells["CategoryID"].Value.ToString();
                 cbNCC.SelectedValue = gvSanPham.Rows[e.RowIndex].Cells["SupplierID"].Value.ToString();
+                MessageBox.Show(productID.ToString());
             }
         }
 
@@ -83,6 +84,7 @@ namespace NguyenBaoLong
             try
             {
                 Product p = new Product();
+                p.ProductID = productID;
                 p.ProductName = txtTenSP.Text;
                 p.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
                 p.CategoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
