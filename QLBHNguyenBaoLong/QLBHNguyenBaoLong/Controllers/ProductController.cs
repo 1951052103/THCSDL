@@ -10,7 +10,6 @@ namespace QLBHNguyenBaoLong.Controllers
     public class ProductController : Controller
     {
         NWDataContext da = new NWDataContext();
-
         // GET: Product
         public ActionResult Index()
         {
